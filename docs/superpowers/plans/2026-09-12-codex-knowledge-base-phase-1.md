@@ -65,7 +65,7 @@ scripts/test-verify-knowledge-base.sh
 - Consumes: 设计规格中的 S/A/B/X 来源等级、声明级引用格式、新鲜度规则和冲突处理规则。
 - Produces: `registry.yaml` 中唯一的 `id`、`level`、`published_at`、`verified_at`、`stability`、`status` 字段；Task 3 的检查器依赖这些字段。
 
-- [ ] **Step 1: 写入维护制度**
+- [x] **Step 1: 写入维护制度**
 
 创建 `docs/maintenance.md`，正文必须包含以下完整章节：
 
@@ -130,7 +130,7 @@ scripts/test-verify-knowledge-base.sh
 - CHANGELOG 记录了证据基线变化。
 ```
 
-- [ ] **Step 2: 建立首批来源登记**
+- [x] **Step 2: 建立首批来源登记**
 
 创建 `sources/registry.yaml`。第一阶段只登记已经实际打开核验的三项官方来源，不提前加入未阅读的论文或专家文章：
 
@@ -192,7 +192,7 @@ sources:
       - 'AGENTS.md discovery and precedence behavior'
 ```
 
-- [ ] **Step 3: 建立人工核验日志**
+- [x] **Step 3: 建立人工核验日志**
 
 创建 `sources/review-log.md`：
 
@@ -214,7 +214,7 @@ sources:
 - 旧知识库中的未复核转述：等待逐条回到原始来源后再决定是否迁移。
 ```
 
-- [ ] **Step 4: 人工核对来源合同**
+- [x] **Step 4: 人工核对来源合同**
 
 Run:
 
@@ -229,7 +229,7 @@ Expected:
 - registry 出现 3 个唯一 ID；
 - 每项来源都有 `level`、`published_at`、`verified_at`、`stability` 和 `status`。
 
-- [ ] **Step 5: Git 检查点**
+- [x] **Step 5: Git 检查点**
 
 只运行：
 
@@ -254,7 +254,7 @@ git diff -- docs/maintenance.md sources/registry.yaml sources/review-log.md
 - Consumes: Task 1 的来源制度和 `sources/registry.yaml`。
 - Produces: 人类入口 `README.md`、Codex 入口 `AGENTS.md`、维护历史 `CHANGELOG.md`。
 
-- [ ] **Step 1: 创建 README 导航**
+- [x] **Step 1: 创建 README 导航**
 
 `README.md` 必须明确：
 
@@ -294,7 +294,7 @@ scripts/verify-knowledge-base.sh
 ```
 ```
 
-- [ ] **Step 2: 创建精简 AGENTS.md**
+- [x] **Step 2: 创建精简 AGENTS.md**
 
 `AGENTS.md` 控制在 100 行以内，只包含：
 
@@ -335,7 +335,7 @@ scripts/verify-knowledge-base.sh
 - 报告本轮真实验证结果；`failed`、`blocked` 和 `not_run` 不得写成通过。
 ```
 
-- [ ] **Step 3: 创建 CHANGELOG**
+- [x] **Step 3: 创建 CHANGELOG**
 
 `CHANGELOG.md` 初始内容：
 
@@ -352,7 +352,7 @@ scripts/verify-knowledge-base.sh
 - 知识库导航和 Codex 工作协议。
 ```
 
-- [ ] **Step 4: 检查入口的一致性**
+- [x] **Step 4: 检查入口的一致性**
 
 Run:
 
@@ -364,7 +364,7 @@ rg -n "OpenAI Docs|权威论文|专家分享|验证" README.md AGENTS.md
 
 Expected: 命令退出码为 0，且所有导航路径存在。
 
-- [ ] **Step 5: Git 检查点**
+- [x] **Step 5: Git 检查点**
 
 只运行 `git diff -- README.md AGENTS.md CHANGELOG.md`。当前目录不是 Git 仓库时记录失败，不执行 Git 初始化或写操作。
 
@@ -382,7 +382,7 @@ Expected: 命令退出码为 0，且所有导航路径存在。
 - Consumes: Task 1 定义的 registry 顶层结构和字段名称。
 - Produces: `scripts/verify-knowledge-base.sh [root]`，成功返回 0，失败返回非 0 并输出具体文件或来源 ID；Task 4 和后续所有阶段使用这一入口。
 
-- [ ] **Step 1: 先写验证器测试**
+- [x] **Step 1: 先写验证器测试**
 
 测试脚本必须：
 
@@ -405,7 +405,7 @@ scripts/test-verify-knowledge-base.sh
 
 Expected: FAIL，因为 `scripts/verify-knowledge-base.sh` 尚不存在。
 
-- [ ] **Step 2: 实现最小验证器**
+- [x] **Step 2: 实现最小验证器**
 
 `scripts/verify-knowledge-base.sh` 必须采用 `set -eu`，接受可选根目录参数并验证：
 
@@ -443,7 +443,7 @@ allowed enum values
 
 不得访问网络、读取工作区外文件或安装 YAML 解析器。首版 YAML 结构固定，允许使用 `awk` 和 `sed` 做窄格式解析；以后结构复杂时再通过独立决策评估解析器。
 
-- [ ] **Step 3: 运行测试验证成功与失败路径**
+- [x] **Step 3: 运行测试验证成功与失败路径**
 
 Run:
 
@@ -464,7 +464,7 @@ PASS: broken relative link rejected
 PASS: verifier test suite
 ```
 
-- [ ] **Step 4: 对真实知识库运行检查**
+- [x] **Step 4: 对真实知识库运行检查**
 
 Run:
 
@@ -474,7 +474,7 @@ scripts/verify-knowledge-base.sh
 
 Expected: `PASS: knowledge base verification`，退出码为 0。
 
-- [ ] **Step 5: Git 检查点**
+- [x] **Step 5: Git 检查点**
 
 只运行 `git diff -- scripts/verify-knowledge-base.sh scripts/test-verify-knowledge-base.sh`。不得执行任何 Git 写操作。
 
@@ -498,7 +498,7 @@ Expected: `PASS: knowledge base verification`，退出码为 0。
 - Consumes: Task 1～3 的全部交付物。
 - Produces: 可独立阅读、来源受控、验证器测试通过的第一阶段知识库骨架。
 
-- [ ] **Step 1: 运行全部确定性检查**
+- [x] **Step 1: 运行全部确定性检查**
 
 Run:
 
@@ -509,7 +509,7 @@ scripts/verify-knowledge-base.sh
 
 Expected: 两条命令退出码均为 0。
 
-- [ ] **Step 2: 检查规范与实现覆盖**
+- [x] **Step 2: 检查规范与实现覆盖**
 
 Run:
 
@@ -521,7 +521,7 @@ rg -n "OAI-HARNESS-2026|OAI-CODEX-BEST-PRACTICES|OAI-AGENTS-MD" sources/registry
 
 Expected: 所有文件存在，四级来源制度和三个官方来源均可定位。
 
-- [ ] **Step 3: 复核外部来源状态**
+- [x] **Step 3: 复核外部来源状态**
 
 实际打开而不是只检查 URL 字符串：
 
@@ -531,7 +531,7 @@ Expected: 所有文件存在，四级来源制度和三个官方来源均可定�
 
 Expected: 三个页面均来自 OpenAI 官方域名，且正文支持 registry 中登记的 claims。若页面不可达，标记 `blocked`；若语义变化，停止验收并修正 registry 和正文。
 
-- [ ] **Step 4: 更新 CHANGELOG 状态**
+- [x] **Step 4: 更新 CHANGELOG 状态**
 
 在 `Unreleased` 下增加：
 
@@ -539,7 +539,7 @@ Expected: 三个页面均来自 OpenAI 官方域名，且正文支持 registry �
 - 第一阶段确定性验证器及其成功、失败路径测试。
 ```
 
-- [ ] **Step 5: 最终变化审查**
+- [x] **Step 5: 最终变化审查**
 
 优先运行：
 
