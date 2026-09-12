@@ -1,0 +1,55 @@
+schema_version: 1
+updated_at: '2026-09-12'
+sources:
+  - id: 'OAI-HARNESS-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'Ryan Lopopolo'
+    title: 'Harness engineering: leveraging Codex in an agent-first world'
+    published_at: '2026-02-11'
+    verified_at: '2026-09-12'
+    url: 'https://openai.com/index/harness-engineering/'
+    applies_to:
+      - 'Codex engineering workflow'
+    stability: 'stable'
+    status: 'active'
+    claims:
+      - 'repository knowledge as system of record'
+      - 'AGENTS.md as a map rather than a monolithic manual'
+      - 'mechanical checks and recurring document maintenance'
+
+  - id: 'OAI-CODEX-BEST-PRACTICES'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Best practices'
+    published_at: null
+    verified_at: '2026-09-12'
+    url: 'https://learn.chatgpt.com/guides/best-practices'
+    applies_to:
+      - 'Codex'
+      - 'AGENTS.md'
+      - 'project configuration'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'keep AGENTS.md short and practical'
+      - 'separate user defaults, project configuration, and one-off overrides'
+
+  - id: 'OAI-AGENTS-MD'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Custom instructions with AGENTS.md'
+    published_at: null
+    verified_at: '2026-09-12'
+    url: 'https://learn.chatgpt.com/docs/agent-configuration/agents-md'
+    applies_to:
+      - 'Codex AGENTS.md discovery and precedence'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'AGENTS.md discovery and precedence behavior'
