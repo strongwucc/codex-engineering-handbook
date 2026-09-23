@@ -152,3 +152,180 @@ sources:
     claims:
       - 'the LangChain experiment compares single-agent, swarm, and supervisor architectures on a modified tau-bench setup'
       - 'the experiment uses GPT-4o, a 100-example retail test subset, distractor domains, task score, and token cost'
+
+  - id: 'OAI-CODEX-AGENTS-MD-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Custom instructions with AGENTS.md'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/agent-configuration/agents-md'
+    applies_to:
+      - 'Codex AGENTS.md discovery and precedence'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'global and project instruction discovery and per-directory precedence'
+      - 'instruction files are merged from project root toward current working directory'
+      - 'project_doc_fallback_filenames configures additional instruction filenames'
+
+  - id: 'OAI-CODEX-CONFIG-BASICS-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Config basics'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/config-file/config-basic'
+    applies_to:
+      - 'Codex configuration layers and precedence'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'CLI flags, project config, selected profiles, user config, managed defaults, system config, and built-in defaults have documented precedence'
+      - 'the CLI and IDE extension share configuration layers'
+
+  - id: 'OAI-CODEX-CONFIG-ADVANCED-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Advanced Configuration'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/config-file/config-advanced'
+    applies_to:
+      - 'CODEX_HOME and project-scoped Codex configuration'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'project config layers load only for trusted projects and the closest project config wins for duplicate keys'
+      - 'project config cannot override specified provider, authentication, profile, notification, and telemetry keys'
+      - 'project config relative paths resolve from the containing .codex directory'
+      - 'CODEX_HOME stores Codex local state including configuration and authentication material'
+
+  - id: 'OAI-CODEX-CONFIG-REFERENCE-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Configuration Reference'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/config-file/config-reference'
+    applies_to:
+      - 'Codex configuration keys and project-layer restrictions'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'configuration reference documents project-layer restrictions and directs sandbox and approval settings to dedicated documentation'
+
+  - id: 'OAI-CODEX-SANDBOXING-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Sandbox'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/sandboxing'
+    applies_to:
+      - 'Codex local sandbox modes and command execution boundaries'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'read-only, workspace-write, and danger-full-access modes have different filesystem and execution boundaries'
+      - 'local CLI sandbox enforcement and available controls differ by operating system'
+
+  - id: 'OAI-CODEX-APPROVALS-SECURITY-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Agent approvals & security'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/agent-approvals-security'
+    applies_to:
+      - 'Codex CLI approval policies and security modes'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'on-request and never control whether Codex pauses for approval, separately from sandbox scope'
+      - 'the untrusted approval policy is retired and no longer supported'
+
+  - id: 'OAI-CODEX-PERMISSIONS-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Permissions'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/permissions'
+    applies_to:
+      - 'Codex named permission profiles and local network policy'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'built-in permission profiles include read-only, workspace, and danger-full-access'
+      - 'command network access, web search, MCP, browser, apps, and Codex service traffic have separate controls'
+      - 'OS-specific sandbox enforcement paths and limitations differ'
+
+  - id: 'OAI-CODEX-HOOKS-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Hooks'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/hooks'
+    applies_to:
+      - 'Codex lifecycle hooks and hook handlers'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'Codex documents lifecycle hook events, matchers, handlers, and input/output contracts'
+      - 'command and MCP tool handlers are supported while prompt and agent handlers are parsed but skipped'
+      - 'hooks can be disabled through the hooks feature key'
+
+  - id: 'OAI-CODEX-SKILLS-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Build skills'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/build-skills'
+    applies_to:
+      - 'Codex local skill structure, discovery, and invocation'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'a skill directory requires SKILL.md with name and description and can include optional supporting files'
+      - 'Codex skills can be explicitly or implicitly invoked'
+      - 'Codex searches repository, user, admin, and system skill locations and does not merge duplicate skill names'
+
+  - id: 'OAI-CODEX-SUBAGENTS-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Subagents'
+    published_at: null
+    verified_at: '2026-09-23'
+    url: 'https://learn.chatgpt.com/docs/agent-configuration/subagents'
+    applies_to:
+      - 'Codex CLI subagent workflows and custom agents'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'local Codex clients support delegated subagent workflows and custom agent definitions'
+      - 'subagents inherit the parent sandbox and parallel write-heavy tasks can create conflicts'
+      - 'custom agents use TOML files with required name, description, and developer_instructions fields'
+      - 'agents.enabled and max_concurrent_threads_per_session configure subagent use and concurrency'

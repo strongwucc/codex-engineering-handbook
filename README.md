@@ -4,15 +4,22 @@
 
 ## 当前状态
 
-第二阶段：稳定原则、九维评估标准、H01-H10 holdout 和报告模板已完成；两个知识库验证脚本于 2026-09-23 通过。现有研究笔记和旧 Codex 知识库仍是候选输入，不是当前规范。
+第三阶段完成：六篇配置教程已完成来源核验和 CLI 交叉检查；两个知识库验证脚本于 2026-09-23 通过。现有研究笔记和旧 Codex 知识库仍是候选输入，不是当前规范。
 
 ## 导航
 
 - 设计规格：`docs/superpowers/specs/2026-09-12-codex-knowledge-base-design.md`
 - 实施计划：`docs/superpowers/plans/2026-09-12-codex-knowledge-base-phase-1.md`
 - 第二阶段实施计划：`docs/superpowers/plans/2026-09-23-codex-knowledge-base-phase-2.md`
+- 第三阶段实施计划：`docs/superpowers/plans/2026-09-23-codex-knowledge-base-phase-3.md`
 - 稳定工程原则：`docs/principles.md`
 - 九维度评估标准：`docs/evaluation-standard.md`
+- 配置教程：`docs/configuration/agents-md.md`
+- 配置教程：`docs/configuration/configuration-hierarchy.md`
+- 配置教程：`docs/configuration/permissions-and-sandbox.md`
+- 配置教程：`docs/configuration/hooks.md`
+- 配置教程：`docs/configuration/skills.md`
+- 配置教程：`docs/configuration/multi-agent.md`
 - Holdout 任务输入：`evals/fixtures/`（一次只向被测 Agent 提供单项任务）
 - Holdout 评分依据：`evals/holdout.md`（评估者专用，不得提供给被测 Agent）
 - 评估报告模板：`templates/evaluation-report.md`
