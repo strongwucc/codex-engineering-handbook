@@ -4,10 +4,14 @@
 
 - `README.md`：读者入口和当前状态。
 - `docs/maintenance.md`：来源准入、复核和失效规则。
+- `docs/principles.md`：稳定工程原则。
+- `docs/evaluation-standard.md`：九维度评估标准与生产门槛。
 - `docs/configuration/`：经过官方文档和当前 CLI 验证的配置教程。
 - `docs/platform/`：模型和版本相关的易变事实。
 - `sources/registry.yaml`：正式来源登记。
-- `evals/`：评估标准和 holdout。
+- `evals/fixtures/`：单项评估任务输入；按隔离协议逐项提供。
+- `evals/holdout.md`：评估者专用评分依据，不得提供给被测 Agent。
+- `templates/evaluation-report.md`：评估报告模板。
 - `scripts/`：确定性检查。
 
 ## 来源规则
