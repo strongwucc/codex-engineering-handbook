@@ -30,6 +30,13 @@
 - 来源核验记录：`sources/review-log.md`
 - 确定性检查：`scripts/verify-knowledge-base.sh`
 
+## 如何使用
+
+- **学习或配置 Codex**：先看 `docs/principles.md`，再按主题打开 `docs/configuration/` 中的教程。
+- **评估项目 Harness**：先读 `docs/evaluation-standard.md`，然后一次只向被测 Agent 提供一个 `evals/fixtures/` 任务；不要暴露 `evals/holdout.md`。
+- **比较模型升级**：按 `evals/model-upgrade/README.md` 的隔离协议，为每个模型和任务准备独立副本；评估者测试和评分表不得放进被测工作区。
+- **新增或更新知识**：遵循 `docs/maintenance.md`，先核验原始来源、更新登记与复核记录，再运行下方验证脚本。
+
 ## 内容原则
 
 - 不把搜索摘要、聚合文章和无出处社区观点作为证据；
