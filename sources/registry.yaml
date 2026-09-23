@@ -9,6 +9,7 @@ sources:
     title: 'Harness engineering: leveraging Codex in an agent-first world'
     published_at: '2026-02-11'
     verified_at: '2026-09-12'
+    review_interval_days: 365
     url: 'https://openai.com/index/harness-engineering/'
     applies_to:
       - 'Codex engineering workflow'
@@ -27,6 +28,7 @@ sources:
     title: 'Best practices'
     published_at: null
     verified_at: '2026-09-12'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/guides/best-practices'
     applies_to:
       - 'Codex'
@@ -46,6 +48,7 @@ sources:
     title: 'Custom instructions with AGENTS.md'
     published_at: null
     verified_at: '2026-09-12'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/agent-configuration/agents-md'
     applies_to:
       - 'Codex AGENTS.md discovery and precedence'
@@ -83,6 +86,7 @@ sources:
     title: 'AgentBench: Evaluating LLMs as Agents'
     published_at: '2023-08-07'
     verified_at: '2026-09-23'
+    review_interval_days: 180
     url: 'https://arxiv.org/abs/2308.03688'
     applies_to:
       - 'interactive and multi-environment agent evaluation'
@@ -106,6 +110,7 @@ sources:
     title: 'SWE-bench: Can Language Models Resolve Real-world GitHub Issues?'
     published_at: '2023-10-10'
     verified_at: '2026-09-23'
+    review_interval_days: 180
     url: 'https://arxiv.org/abs/2310.06770'
     applies_to:
       - 'repository-level coding-agent evaluation'
@@ -128,6 +133,7 @@ sources:
     title: 'SWE-Bench+: Enhanced Coding Benchmark for LLMs'
     published_at: '2024-10-09'
     verified_at: '2026-09-23'
+    review_interval_days: 180
     url: 'https://arxiv.org/abs/2410.06992'
     applies_to:
       - 'benchmark leakage and test-quality auditing'
@@ -144,6 +150,7 @@ sources:
     title: 'Benchmarking Multi-Agent Architectures'
     published_at: '2025-06-10'
     verified_at: '2026-09-23'
+    review_interval_days: 90
     url: 'https://www.langchain.com/blog/benchmarking-multi-agent-architectures'
     applies_to:
       - 'multi-agent architecture comparison as a bounded engineering case study'
@@ -161,6 +168,7 @@ sources:
     title: 'Custom instructions with AGENTS.md'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/agent-configuration/agents-md'
     applies_to:
       - 'Codex AGENTS.md discovery and precedence'
@@ -179,6 +187,7 @@ sources:
     title: 'Config basics'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/config-file/config-basic'
     applies_to:
       - 'Codex configuration layers and precedence'
@@ -196,6 +205,7 @@ sources:
     title: 'Advanced Configuration'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/config-file/config-advanced'
     applies_to:
       - 'CODEX_HOME and project-scoped Codex configuration'
@@ -215,6 +225,7 @@ sources:
     title: 'Configuration Reference'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/config-file/config-reference'
     applies_to:
       - 'Codex configuration keys and project-layer restrictions'
@@ -231,6 +242,7 @@ sources:
     title: 'Sandbox'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/sandboxing'
     applies_to:
       - 'Codex local sandbox modes and command execution boundaries'
@@ -248,6 +260,7 @@ sources:
     title: 'Agent approvals & security'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/agent-approvals-security'
     applies_to:
       - 'Codex CLI approval policies and security modes'
@@ -265,6 +278,7 @@ sources:
     title: 'Permissions'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/permissions'
     applies_to:
       - 'Codex named permission profiles and local network policy'
@@ -283,6 +297,7 @@ sources:
     title: 'Hooks'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/hooks'
     applies_to:
       - 'Codex lifecycle hooks and hook handlers'
@@ -301,6 +316,7 @@ sources:
     title: 'Build skills'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/build-skills'
     applies_to:
       - 'Codex local skill structure, discovery, and invocation'
@@ -319,6 +335,7 @@ sources:
     title: 'Subagents'
     published_at: null
     verified_at: '2026-09-23'
+    review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/agent-configuration/subagents'
     applies_to:
       - 'Codex CLI subagent workflows and custom agents'
@@ -329,3 +346,21 @@ sources:
       - 'subagents inherit the parent sandbox and parallel write-heavy tasks can create conflicts'
       - 'custom agents use TOML files with required name, description, and developer_instructions fields'
       - 'agents.enabled and max_concurrent_threads_per_session configure subagent use and concurrency'
+
+  - id: 'OAI-CODEX-CLI-RELEASES-2026'
+    level: 'S'
+    publisher: 'OpenAI'
+    authors:
+      - 'OpenAI'
+    title: 'Codex CLI releases'
+    published_at: null
+    verified_at: '2026-09-23'
+    review_interval_days: 30
+    url: 'https://github.com/openai/codex/releases'
+    applies_to:
+      - 'versioned Codex CLI release notes and behavior changes'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'the official repository publishes version-specific Codex CLI release notes and full changelog ranges'
+      - 'release notes summarize features, bug fixes, and documentation changes'

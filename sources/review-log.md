@@ -36,3 +36,13 @@
 ### 已拒绝
 
 - LangChain 的 [Benchmarking Question/Answering Over CSV Data](https://www.langchain.com/blog/benchmarking-question-answering-over-csv-data)：原文已打开，但主题聚焦表格问答应用，与本阶段的通用 Agent/Harness 评估关联不足；不纳入本轮正式证据。
+
+## 官方发布差异记录
+
+### 2026-09-23 | Codex CLI `0.155.0` → `0.156.0`
+
+- 来源：已打开 OpenAI 官方仓库的 [`0.156.0` 发布说明](https://github.com/openai/codex/releases/tag/rust-v0.156.0) 与 [`0.155.0` 发布说明](https://github.com/openai/codex/releases/tag/rust-v0.155.0)；`0.156.0` 页面列出的完整差异范围为 `rust-v0.155.0...rust-v0.156.0`。[source:OAI-CODEX-CLI-RELEASES-2026]
+- 本记录是知识库第一条发布差异记录；比较范围来自官方发布页，不代表已有历史核查记录。当前稳定版本 `0.156.0` 于 2026-09-22 发布，复核日期为 2026-09-23。[source:OAI-CODEX-CLI-RELEASES-2026]
+- 相关变化：发布说明包括可选全屏 `/tui`、默认启用语音会话、`/usage` 仪表板、worktree 默认启用、终端主题与 Mermaid/数学公式显示、daemon 管理；还澄清 `friendly`/`pragmatic` personality 设置不再选择响应风格。[source:OAI-CODEX-CLI-RELEASES-2026]
+- 影响评估：现有教程未覆盖上述新增交互功能，也未记录 personality 设置，因此不扩写当前配置教程。发布说明称 agent command center 可创建 worktree sessions，但没有说明每个 subagent 都自动拥有独立 worktree；据发布说明范围判断，`docs/configuration/multi-agent.md` 的谨慎表述不需修改。这不是官方对每个 subagent 文件隔离的保证。发布说明还记录了 Windows 入站连接、Linux/macOS 特权 socket 和 macOS 只读文件句柄写入相关的沙箱修复；对照 `OAI-CODEX-SANDBOXING-2026`、`OAI-CODEX-PERMISSIONS-2026` 与 `docs/configuration/permissions-and-sandbox.md`，现有内容只描述平台差异并明确不承诺绝对隔离，没有声称这些旧问题仍存在，故本轮不改教程。[source:OAI-CODEX-CLI-RELEASES-2026] [source:OAI-CODEX-SUBAGENTS-2026] [source:OAI-CODEX-SANDBOXING-2026] [source:OAI-CODEX-PERMISSIONS-2026]
+- 处理结果：将官方 releases 页登记为 `OAI-CODEX-CLI-RELEASES-2026`；未自动改写教程或更新其他来源的 `verified_at`。后续 stable release 逐条对比上一条已记录版本；涉及现有声明的差异须先复核其原始来源，再决定同步修改与验证。

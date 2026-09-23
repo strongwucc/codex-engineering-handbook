@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-第三阶段完成：六篇配置教程已完成来源核验和 CLI 交叉检查；两个知识库验证脚本于 2026-09-23 通过。现有研究笔记和旧 Codex 知识库仍是候选输入，不是当前规范。
+前三阶段已完成；第四阶段进行中：来源新鲜度检查和官方 CLI 发布差异记录已建立；模型升级 core/profile holdout 和月度审计尚未完成。现有研究笔记和旧 Codex 知识库仍是候选输入，不是当前规范。
 
 ## 导航
 
@@ -12,6 +12,7 @@
 - 实施计划：`docs/superpowers/plans/2026-09-12-codex-knowledge-base-phase-1.md`
 - 第二阶段实施计划：`docs/superpowers/plans/2026-09-23-codex-knowledge-base-phase-2.md`
 - 第三阶段实施计划：`docs/superpowers/plans/2026-09-23-codex-knowledge-base-phase-3.md`
+- 第四阶段新鲜度检查计划：`docs/superpowers/plans/2026-09-23-codex-knowledge-base-phase-4-freshness.md`
 - 稳定工程原则：`docs/principles.md`
 - 九维度评估标准：`docs/evaluation-standard.md`
 - 配置教程：`docs/configuration/agents-md.md`
