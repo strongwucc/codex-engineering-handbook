@@ -10,6 +10,7 @@
 - `docs/platform/`：模型和版本相关的易变事实。
 - `sources/registry.yaml`：正式来源登记。
 - `evals/fixtures/`：单项评估任务输入；按隔离协议逐项提供。
+- `evals/model-upgrade/`：独立模型升级练习集；评分表和验收测试仅供评估者使用。
 - `evals/holdout.md`：评估者专用评分依据，不得提供给被测 Agent。
 - `templates/evaluation-report.md`：评估报告模板。
 - `scripts/`：确定性检查。

@@ -16,3 +16,4 @@
 - 第三阶段验证：`scripts/test-verify-knowledge-base.sh` 与 `scripts/verify-knowledge-base.sh` 于 2026-09-23 通过。
 - 第四阶段启动：17 项来源登记人工选择的复核周期；验证器会报告并阻止未复核的过期 active 来源，但不会自动修改 registry 状态。
 - 第四阶段官方发布差异记录启动：登记 OpenAI 官方 Codex CLI Releases 来源，并完成 `0.155.0 → 0.156.0` 首条影响评估；保持未受影响教程不变，后续按 stable release 追加复核记录。
+- 第四阶段模型升级准备：新增独立、无第三方依赖的 Node.js 练习基线、四项隔离任务及评估者验收测试；尚未运行模型对照，不代表升级回归已验证。

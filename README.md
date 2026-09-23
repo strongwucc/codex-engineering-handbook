@@ -4,7 +4,7 @@
 
 ## 当前状态
 
-前三阶段已完成；第四阶段进行中：来源新鲜度检查和官方 CLI 发布差异记录已建立；模型升级 core/profile holdout 和月度审计尚未完成。现有研究笔记和旧 Codex 知识库仍是候选输入，不是当前规范。
+前三阶段已完成；第四阶段进行中：来源新鲜度检查和官方 CLI 发布差异记录已建立；模型升级独立练习集已准备，实际 core/profile 对照运行和月度审计尚未完成。现有研究笔记和旧 Codex 知识库仍是候选输入，不是当前规范。
 
 ## 导航
 
@@ -22,6 +22,7 @@
 - 配置教程：`docs/configuration/skills.md`
 - 配置教程：`docs/configuration/multi-agent.md`
 - Holdout 任务输入：`evals/fixtures/`（一次只向被测 Agent 提供单项任务）
+- 模型升级独立练习集：`evals/model-upgrade/`（一次只提供一个任务；验收测试和评分表仅供评估者使用）
 - Holdout 评分依据：`evals/holdout.md`（评估者专用，不得提供给被测 Agent）
 - 评估报告模板：`templates/evaluation-report.md`
 - 维护与来源准入：`docs/maintenance.md`
