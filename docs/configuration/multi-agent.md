@@ -1,21 +1,20 @@
 # Multi-Agent 与 Subagents
 
-> 本文记录 Codex 配置的易变事实。核验日期：2026-09-23；本机 CLI：`codex-cli 0.156.0`。已执行只读命令 `codex --version`、`codex features list`、`codex agents --help`；没有启动子 Agent。来源：[OpenAI 官方 Subagents 文档](https://learn.chatgpt.com/docs/agent-configuration/subagents) [source:OAI-CODEX-SUBAGENTS-2026]
+> 本文记录 Codex 配置的易变事实。核验日期：2026-10-21；本机 CLI：`codex-cli 0.163.0`。已执行只读命令 `codex --version`、`codex features list`、`codex agents --help`；未在独立 CLI 会话中测试子 Agent 行为。来源：[OpenAI 官方 Subagents 文档](https://learn.chatgpt.com/docs/agent-configuration/subagents) [source:OAI-CODEX-SUBAGENTS-2026]
 
 ## 何时使用
 
 Subagent 是 Codex 为独立子任务派出的专用 Agent；主 Agent 负责拆分任务、收集结果并汇总。当前本地 Codex 支持 subagent 工作流，官方文档称默认启用。你可以直接要求并行分析，也可以在适用的 `AGENTS.md` 或 Skill 中声明何时委派。多个子 Agent 会各自进行模型与工具调用，因此会增加 Token 用量；优先用于可并行、互不依赖的探索、测试分析和资料整理。[source:OAI-CODEX-SUBAGENTS-2026]
 
-交互式 CLI 会话可用 `/agent` 查看或切换 Agent thread。本机 `codex agents --help` 的顶层命令用途是浏览 app-server 上的 Agent sessions；不要把它误认为启动 subagent 的命令。当前本机 `codex features list` 报告 `multi_agent stable true`；该结果只代表 CLI 对本地功能阶段/状态的报告，不等于本轮已实际运行子 Agent。[source:OAI-CODEX-SUBAGENTS-2026]
+交互式 CLI 会话可用 `/subagents` 查看或切换 Agent thread。本机 `codex agents --help` 的顶层命令用途是浏览 app-server 上的 Agent sessions；不要把它误认为启动 subagent 的命令。当前本机 `codex features list` 报告 `multi_agent stable true`；该结果只代表 CLI 对本地功能阶段/状态的报告，不等于已验证 CLI 中的子 Agent 行为。[source:OAI-CODEX-SUBAGENTS-2026]
 
 ## 自定义 Agent
 
-本机用户 Agent 放在 `~/.codex/agents/`；仓库级 Agent 放在 `.codex/agents/`。每个 TOML 文件至少包含 `name`、`description` 和 `developer_instructions`。可按需配置模型、推理强度或 `sandbox_mode` 等支持的配置项。[source:OAI-CODEX-SUBAGENTS-2026]
+本机用户 Agent 放在 `~/.codex/agents/`；仓库级 Agent 放在 `.codex/agents/`。每个 TOML 文件至少包含 `name`、`description` 和 `developer_instructions`。可按需配置模型、推理强度，以及文档支持的功能或 Skill 开关；`sandbox_mode`、`approval_policy` 等会话设置放进自定义 Agent 文件也不会覆盖父会话配置。[source:OAI-CODEX-SUBAGENTS-2026]
 
 ```toml
 name = 'docs_auditor'
 description = '只读核验技术文档和本仓库对应实现。'
-sandbox_mode = 'read-only'
 developer_instructions = '''
 只读检查资料与实现。
 给出来源、证据和适用边界；不要修改文件。
@@ -26,7 +25,7 @@ developer_instructions = '''
 
 ## 权限与执行边界
 
-Subagent 继承父 Agent 当前的 sandbox/permission mode。自定义 Agent 文件可以设置自己的配置默认项，但父会话中的实时权限覆盖会在子 Agent 启动时重新应用。审批请求也可能来自当前不在前台的 Agent thread；批准前先确认请求来源。[source:OAI-CODEX-SUBAGENTS-2026]
+Subagent 继承父会话当前的沙箱与审批设置；自定义 Agent 文件不能替换这些设置。上例的“只读”是行为指令，不会创建独立的只读沙箱；权限边界应在父会话设置。审批请求也可能来自当前不在前台的 Agent thread；批准前先确认请求来源。[source:OAI-CODEX-SUBAGENTS-2026]
 
 **并发写入要谨慎。** OpenAI 文档建议优先并行处理只读任务，并提醒多个 Agent 同时编辑代码可能造成冲突。本页没有承诺每个子 Agent 都运行在独立 worktree，因此不要把 subagent 当作文件系统隔离机制。[source:OAI-CODEX-SUBAGENTS-2026]
 
@@ -44,7 +43,7 @@ Subagent 继承父 Agent 当前的 sandbox/permission mode。自定义 Agent 文
 ## 验证
 
 1. 执行 `codex --version` 和 `codex features list`，记录安装版本与 `multi_agent` 状态。
-2. 使用 `codex agents --help` 区分 session 浏览命令和交互式 `/agent` thread 管理。
-3. 如需实测，先在允许启动 Agent 的低风险任务中执行一个只读并行工作流，再检查父线程汇总、Agent thread 和审批/沙箱行为；本轮没有运行此测试，标记为 `not_run`。
+2. 使用 `codex agents --help` 区分 session 浏览命令和交互式 `/subagents` thread 管理。
+3. 如需实测，先在允许启动 Agent 的低风险任务中执行一个只读并行工作流，再检查父线程汇总、Agent thread 和审批/沙箱行为；本轮未在独立 CLI 会话运行此测试，标记为 `not_run`。
 
-本机观察到 `multi_agent stable true`，CLI session 浏览命令可用；并发调度、权限继承和文件写入隔离均未在本轮运行时测试。[source:OAI-CODEX-SUBAGENTS-2026]
+本机观察到 `multi_agent stable true`，CLI session 浏览命令可用。本轮资料复核使用了只读子 Agent，但未在独立 CLI 会话中测试并发调度、权限继承或文件写入隔离，这些验证仍为 `not_run`。[source:OAI-CODEX-SUBAGENTS-2026]

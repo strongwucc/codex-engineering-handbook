@@ -1,6 +1,6 @@
 # 配置层级与 `config.toml`
 
-> 本文记录 Codex 配置的易变事实。核验日期：2026-09-23；本机 CLI：`codex-cli 0.156.0`。CLI 只读核验命令：`codex --version`、`codex --help`；没有读取本机用户配置或启动模型会话。来源：[Config basics](https://learn.chatgpt.com/docs/config-file/config-basic) [source:OAI-CODEX-CONFIG-BASICS-2026]、[Advanced Configuration](https://learn.chatgpt.com/docs/config-file/config-advanced) [source:OAI-CODEX-CONFIG-ADVANCED-2026]、[Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) [source:OAI-CODEX-CONFIG-REFERENCE-2026]
+> 本文记录 Codex 配置的易变事实。核验日期：2026-10-21；本机 CLI：`codex-cli 0.163.0`。CLI 只读核验命令：`codex --version`、`codex --help`；没有读取本机用户配置或启动模型会话。来源：[Config basics](https://learn.chatgpt.com/docs/config-file/config-basic) [source:OAI-CODEX-CONFIG-BASICS-2026]、[Advanced Configuration](https://learn.chatgpt.com/docs/config-file/config-advanced) [source:OAI-CODEX-CONFIG-ADVANCED-2026]、[Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) [source:OAI-CODEX-CONFIG-REFERENCE-2026]
 
 ## 配置从哪里来
 
@@ -15,6 +15,8 @@ Codex 按以下顺序解析配置，同一配置项由顺序更靠前的来源�
 7. Codex 内置默认值。
 
 CLI 与 IDE 扩展共用这些配置层。配置项很多，且版本会变化；编辑前先查当前 [配置参考](https://learn.chatgpt.com/docs/config-file/config-reference)。[source:OAI-CODEX-CONFIG-BASICS-2026]
+
+这些层级决定配置默认值；组织通过 `requirements.toml` 等方式强制的要求会另行约束行为，CLI 覆盖不能解除这些约束。[source:OAI-CODEX-CONFIG-BASICS-2026]
 
 ## 项目配置的信任边界
 

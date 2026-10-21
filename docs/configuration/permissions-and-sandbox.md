@@ -1,6 +1,6 @@
 # 权限、审批与沙箱
 
-> 本文记录 Codex 配置的易变事实。核验日期：2026-09-23；本机 CLI：`codex-cli 0.156.0`。已执行只读检查：`codex --version`、`codex --help`、`codex sandbox --help`；没有执行被沙箱包裹的命令或实际越权测试。来源：[Sandbox](https://learn.chatgpt.com/docs/sandboxing) [source:OAI-CODEX-SANDBOXING-2026]、[Agent approvals & security](https://learn.chatgpt.com/docs/agent-approvals-security) [source:OAI-CODEX-APPROVALS-SECURITY-2026]、[Permissions](https://learn.chatgpt.com/docs/permissions) [source:OAI-CODEX-PERMISSIONS-2026]、[Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) [source:OAI-CODEX-CONFIG-REFERENCE-2026]
+> 本文记录 Codex 配置的易变事实。核验日期：2026-10-21；本机 CLI：`codex-cli 0.163.0`。已执行只读检查：`codex --version`、`codex --help`、`codex sandbox --help`；没有执行被沙箱包裹的命令或实际越权测试。来源：[Sandbox](https://learn.chatgpt.com/docs/sandboxing) [source:OAI-CODEX-SANDBOXING-2026]、[Agent approvals & security](https://learn.chatgpt.com/docs/agent-approvals-security) [source:OAI-CODEX-APPROVALS-SECURITY-2026]、[Permissions](https://learn.chatgpt.com/docs/permissions) [source:OAI-CODEX-PERMISSIONS-2026]、[Configuration Reference](https://learn.chatgpt.com/docs/config-file/config-reference) [source:OAI-CODEX-CONFIG-REFERENCE-2026]
 
 ## 三个不同的控制面
 
@@ -17,6 +17,8 @@
 | `read-only` | 允许检查文件；写入和沙箱外操作受限 | 适合只读探索与审查 |
 | `workspace-write` | 可读写活动工作区并运行常见本地命令；越过工作区边界的操作受限 | 适合常规仓库修改；可写根目录之外的权限仍需另行授予 |
 | `danger-full-access` | 移除本地沙箱限制 | 仅在明确需要广泛本机访问时使用；不要作为日常默认值 |
+
+可写根目录内仍可能存在显式拒绝或受保护路径；批准命令或请求文件系统提权，不代表这些拒绝和网络限制自动解除。官方 `0.159.0` 与 `0.161.0` 发布说明记录了相关限制保留行为。[source:OAI-CODEX-CLI-RELEASES-2026]
 
 Codex 依据操作系统使用不同的执行隔离机制；macOS、Linux/WSL 与原生 Windows 的实现及可强制策略并不相同。沙箱无法替代最小权限、代码审查或对运行环境的隔离；不要把某一平台的测试结果推广为所有平台的保证。[source:OAI-CODEX-SANDBOXING-2026] [source:OAI-CODEX-PERMISSIONS-2026]
 
@@ -39,7 +41,7 @@ approval_policy = "on-request"
 
 当前官方文档还介绍了 named permission profiles，例如内置 `:read-only`、`:workspace` 和 `:danger-full-access`，通过 `default_permissions` 选择 profile。不要把 profile 名称和 `sandbox_mode` 的枚举值混为一谈；先检查当前 CLI 版本和组织管理策略，再按配置参考设置。[source:OAI-CODEX-PERMISSIONS-2026] [source:OAI-CODEX-CONFIG-REFERENCE-2026]
 
-`codex --help` 在本机 `0.156.0` 中确认 `--sandbox` 提供 `read-only`、`workspace-write`、`danger-full-access`，并列出 `--ask-for-approval`；`codex sandbox --help` 列出 `--permission-profile`。以上只证明 CLI 接受这些参数，不证明某一命令在特定 OS、容器或组织策略下的实际隔离效果。[source:OAI-CODEX-SANDBOXING-2026] [source:OAI-CODEX-APPROVALS-SECURITY-2026]
+`codex --help` 在本机 `0.163.0` 中确认 `--sandbox` 提供 `read-only`、`workspace-write`、`danger-full-access`，并列出 `--ask-for-approval`；`codex sandbox --help` 列出 `--permission-profile`。以上只证明 CLI 接受这些参数，不证明某一命令在特定 OS、容器或组织策略下的实际隔离效果。[source:OAI-CODEX-SANDBOXING-2026] [source:OAI-CODEX-APPROVALS-SECURITY-2026]
 
 ## 网络权限不要混为一谈
 

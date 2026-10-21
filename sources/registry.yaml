@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: '2026-09-23'
+updated_at: '2026-10-21'
 sources:
   - id: 'OAI-HARNESS-2026'
     level: 'S'
@@ -27,7 +27,7 @@ sources:
       - 'OpenAI'
     title: 'Best practices'
     published_at: null
-    verified_at: '2026-09-12'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/guides/best-practices'
     applies_to:
@@ -47,7 +47,7 @@ sources:
       - 'OpenAI'
     title: 'Custom instructions with AGENTS.md'
     published_at: null
-    verified_at: '2026-09-12'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/agent-configuration/agents-md'
     applies_to:
@@ -167,7 +167,7 @@ sources:
       - 'OpenAI'
     title: 'Custom instructions with AGENTS.md'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/agent-configuration/agents-md'
     applies_to:
@@ -186,7 +186,7 @@ sources:
       - 'OpenAI'
     title: 'Config basics'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/config-file/config-basic'
     applies_to:
@@ -196,6 +196,7 @@ sources:
     claims:
       - 'CLI flags, project config, selected profiles, user config, managed defaults, system config, and built-in defaults have documented precedence'
       - 'the CLI and IDE extension share configuration layers'
+      - 'organization-enforced requirements constrain configuration separately from default-value precedence'
 
   - id: 'OAI-CODEX-CONFIG-ADVANCED-2026'
     level: 'S'
@@ -204,7 +205,7 @@ sources:
       - 'OpenAI'
     title: 'Advanced Configuration'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/config-file/config-advanced'
     applies_to:
@@ -224,7 +225,7 @@ sources:
       - 'OpenAI'
     title: 'Configuration Reference'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/config-file/config-reference'
     applies_to:
@@ -241,7 +242,7 @@ sources:
       - 'OpenAI'
     title: 'Sandbox'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/sandboxing'
     applies_to:
@@ -259,7 +260,7 @@ sources:
       - 'OpenAI'
     title: 'Agent approvals & security'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/agent-approvals-security'
     applies_to:
@@ -277,7 +278,7 @@ sources:
       - 'OpenAI'
     title: 'Permissions'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/permissions'
     applies_to:
@@ -296,7 +297,7 @@ sources:
       - 'OpenAI'
     title: 'Hooks'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/hooks'
     applies_to:
@@ -307,6 +308,7 @@ sources:
       - 'Codex documents lifecycle hook events, matchers, handlers, and input/output contracts'
       - 'command and MCP tool handlers are supported while prompt and agent handlers are parsed but skipped'
       - 'hooks can be disabled through the hooks feature key'
+      - 'non-managed hooks require review and trust of the current definition before running'
 
   - id: 'OAI-CODEX-SKILLS-2026'
     level: 'S'
@@ -315,7 +317,7 @@ sources:
       - 'OpenAI'
     title: 'Build skills'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/build-skills'
     applies_to:
@@ -334,7 +336,7 @@ sources:
       - 'OpenAI'
     title: 'Subagents'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/agent-configuration/subagents'
     applies_to:
@@ -344,6 +346,7 @@ sources:
     claims:
       - 'local Codex clients support delegated subagent workflows and custom agent definitions'
       - 'subagents inherit the parent sandbox and parallel write-heavy tasks can create conflicts'
+      - 'custom agent files cannot override parent sandbox or approval settings'
       - 'custom agents use TOML files with required name, description, and developer_instructions fields'
       - 'agents.enabled and max_concurrent_threads_per_session configure subagent use and concurrency'
 
@@ -354,7 +357,7 @@ sources:
       - 'OpenAI'
     title: 'Codex CLI releases'
     published_at: null
-    verified_at: '2026-09-23'
+    verified_at: '2026-10-21'
     review_interval_days: 30
     url: 'https://github.com/openai/codex/releases'
     applies_to:

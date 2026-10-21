@@ -1,6 +1,6 @@
 # Hooks 生命周期钩子
 
-> 本文记录 Codex 配置的易变事实。核验日期：2026-09-23；本机 CLI：`codex-cli 0.156.0`。执行过只读命令 `codex --version` 与 `codex features list`；本机将 `hooks` 标记为 `stable / true`。没有安装或执行任何 Hook 脚本。来源：[OpenAI 官方 Hooks 文档](https://learn.chatgpt.com/docs/hooks) [source:OAI-CODEX-HOOKS-2026]、[Advanced Configuration](https://learn.chatgpt.com/docs/config-file/config-advanced) [source:OAI-CODEX-CONFIG-ADVANCED-2026]
+> 本文记录 Codex 配置的易变事实。核验日期：2026-10-21；本机 CLI：`codex-cli 0.163.0`。执行过只读命令 `codex --version` 与 `codex features list`；本机将 `hooks` 标记为 `stable / true`。没有安装或执行任何 Hook 脚本。来源：[OpenAI 官方 Hooks 文档](https://learn.chatgpt.com/docs/hooks) [source:OAI-CODEX-HOOKS-2026]、[Advanced Configuration](https://learn.chatgpt.com/docs/config-file/config-advanced) [source:OAI-CODEX-CONFIG-ADVANCED-2026]
 
 ## Hook 做什么
 
@@ -40,6 +40,7 @@ Hook 可用 `hooks.json` 或相邻 `config.toml` 中的 inline `[hooks]` 配置�
 
 ## 生命周期与安全
 
+- 非托管 Hook 必须先审核并信任其当前定义才会运行；信任按定义的 hash 记录，新增或修改后会跳过执行，直到重新审核。CLI 的 `/hooks` 用于查看来源、审核、信任或禁用非托管 Hook；启用插件不会自动信任其 Hook。托管 Hook 由策略信任，不能在用户 Hook 浏览器中禁用。[source:OAI-CODEX-HOOKS-2026]
 - Hooks 当前默认启用；可通过 `[features] hooks = false` 关闭。CLI 功能列表显示的是当前安装版本的功能阶段与有效状态，更新 CLI 后应重新检查。[source:OAI-CODEX-HOOKS-2026]
 - 命令 Hook 在会话的当前工作目录运行；使用稳定的绝对路径或从项目根定位脚本，避免因从子目录启动而运行错文件。[source:OAI-CODEX-HOOKS-2026]
 - 命令 Hook 默认超时为多数事件 600 秒；`SessionEnd` 和 `Interrupt` 的默认超时与上限更短。异步 Hook 会后台运行；每个会话最多并发运行八个，`SessionEnd` 始终同步执行。[source:OAI-CODEX-HOOKS-2026]
@@ -50,7 +51,7 @@ Hook 可用 `hooks.json` 或相邻 `config.toml` 中的 inline `[hooks]` 配置�
 
 1. 执行 `codex --version`，记录 CLI 版本。
 2. 执行 `codex features list`，检查 `hooks` 的状态；该命令只核验当前配置下 CLI 报告的功能阶段/有效状态。
-3. 查官方事件表核对事件名、matcher、输入输出与超时；只读 `codex --help` 或功能列表不会验证 Hook 脚本是否运行。
+3. 查官方事件表核对事件名、matcher、输入输出与超时，并在 `/hooks` 中检查非托管 Hook 的审核状态；只读 `codex --help` 或功能列表不会验证 Hook 脚本是否运行。
 4. 如需运行时测试，使用隔离的临时项目和无敏感信息的无害脚本，先审查脚本及匹配条件；本轮没有执行运行时 Hook 测试，标记为 `not_run`。
 
-本机结果为 CLI `0.156.0`、`hooks stable true`。`prompt`/`agent` handler、各事件失败分支及实际脚本执行未在本轮运行验证；后续版本如有变化，应以官方原文和重新执行的 CLI 检查为准。[source:OAI-CODEX-HOOKS-2026]
+本机结果为 CLI `0.163.0`、`hooks stable true`。Hook 信任流程、`prompt`/`agent` handler、各事件失败分支及实际脚本执行未在本轮运行验证；后续版本如有变化，应以官方原文和重新执行的 CLI 检查为准。[source:OAI-CODEX-HOOKS-2026]

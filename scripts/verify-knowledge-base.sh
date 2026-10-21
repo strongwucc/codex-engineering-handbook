@@ -9,9 +9,9 @@ fail() {
 date_to_epoch() {
   local date_value=$1 parsed_epoch normalized_date
   [[ "$date_value" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || return 1
-  if parsed_epoch=$(date -u -j -f '%Y-%m-%d' "$date_value" '+%s' 2>/dev/null); then
+  if parsed_epoch=$(date -u -j -f '%Y-%m-%d %H:%M:%S' "$date_value 00:00:00" '+%s' 2>/dev/null); then
     :
-  elif parsed_epoch=$(date -u -d "$date_value" '+%s' 2>/dev/null); then
+  elif parsed_epoch=$(date -u -d "$date_value 00:00:00" '+%s' 2>/dev/null); then
     :
   else
     return 1

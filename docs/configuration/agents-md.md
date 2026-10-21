@@ -1,6 +1,6 @@
 # AGENTS.md 指令文件
 
-> 本文记录 Codex 配置的易变事实。核验日期：2026-09-23；本机 CLI：`codex-cli 0.156.0`。CLI 仅执行了 `codex --version` 与 `codex --help`，没有启动模型会话验证指令发现行为。来源：[OpenAI 官方文档](https://learn.chatgpt.com/docs/agent-configuration/agents-md) [source:OAI-CODEX-AGENTS-MD-2026]
+> 本文记录 Codex 配置的易变事实。核验日期：2026-10-21；本机 CLI：`codex-cli 0.163.0`。CLI 仅执行了 `codex --version` 与 `codex --help`，没有启动模型会话验证指令发现行为。来源：[OpenAI 官方文档](https://learn.chatgpt.com/docs/agent-configuration/agents-md) [source:OAI-CODEX-AGENTS-MD-2026]
 
 ## 用途与范围
 

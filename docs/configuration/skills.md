@@ -1,6 +1,6 @@
 # Codex Skills
 
-> 本文记录 Codex 配置的易变事实。核验日期：2026-09-23；本机 CLI：`codex-cli 0.156.0`。执行过只读检查 `codex --version` 与 `codex --help`；未启动会话测试 `$` 或 `/skills`。来源：[OpenAI 官方 Build skills 文档](https://learn.chatgpt.com/docs/build-skills) [source:OAI-CODEX-SKILLS-2026]
+> 本文记录 Codex 配置的易变事实。核验日期：2026-10-21；本机 CLI：`codex-cli 0.163.0`。执行过只读检查 `codex --version` 与 `codex --help`；未启动独立 CLI 会话测试 `$` 或 `/skills`。来源：[OpenAI 官方 Build skills 文档](https://learn.chatgpt.com/docs/build-skills) [source:OAI-CODEX-SKILLS-2026]
 
 ## Skill 是什么
 
@@ -63,4 +63,4 @@ Skill 的名称和描述会先进入可用列表；需要使用时再载入完�
 3. 在隔离的新会话中显式调用一次，并用一个符合 `description` 的任务检查隐式触发；不要仅凭文件存在或 `codex --help` 就宣称调用成功。
 4. 如果更新未显示，重启 Codex；不要为排错输出无关的用户级 Skill 内容。
 
-本轮验证到 CLI 版本及顶层帮助内容，没有实际调用 Skills，因此 Skill 发现和触发行为标记为 `not_run`。[source:OAI-CODEX-SKILLS-2026]
+本轮在维护会话中读取了相关 Skill，但未在独立 CLI 会话中测试发现、显式调用和隐式触发，因此这些行为验证标记为 `not_run`。[source:OAI-CODEX-SKILLS-2026]

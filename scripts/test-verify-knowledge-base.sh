@@ -76,9 +76,25 @@ assert_failure_contains() {
   esac
 }
 
+# 直接测试生产解析函数，避免 BSD date 沿用调用时的时分秒。
+sed -n '/^date_to_epoch() {$/,/^}$/p' "$VERIFIER" > "$WORK_DIR/date-parser.sh"
+source "$WORK_DIR/date-parser.sh"
+parsed_epoch=$(date_to_epoch '2026-10-21')
+[ "$parsed_epoch" = '1792540800' ] || {
+  printf 'expected UTC midnight epoch 1792540800, got %s\n' "$parsed_epoch"
+  exit 1
+}
+printf '%s\n' 'PASS: date parsing normalizes to UTC midnight'
+
 write_fixture
 assert_success
 printf '%s\n' 'PASS: valid fixture accepted'
+
+write_fixture
+sed "s/verified_at: '2026-09-12'/verified_at: '2026-09-23'/" "$WORK_DIR/sources/registry.yaml" > "$WORK_DIR/registry.tmp"
+mv "$WORK_DIR/registry.tmp" "$WORK_DIR/sources/registry.yaml"
+assert_success
+printf '%s\n' 'PASS: verification on the current date accepted'
 
 write_fixture
 VERIFIER_TODAY='2026-10-13'
