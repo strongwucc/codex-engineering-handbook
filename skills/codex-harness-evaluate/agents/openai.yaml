@@ -1,0 +1,4 @@
+interface:
+  display_name: "Codex Harness 评估"
+  short_description: "基于 Codex Harness 原则对具体项目执行证据化成熟度审计"
+  default_prompt: "使用 $codex-harness-evaluate 对当前项目执行只读 Harness 成熟度评估。"
