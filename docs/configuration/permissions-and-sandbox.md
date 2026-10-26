@@ -41,11 +41,17 @@ approval_policy = "on-request"
 
 当前官方文档还介绍了 named permission profiles，例如内置 `:read-only`、`:workspace` 和 `:danger-full-access`，通过 `default_permissions` 选择 profile。不要把 profile 名称和 `sandbox_mode` 的枚举值混为一谈；先检查当前 CLI 版本和组织管理策略，再按配置参考设置。[source:OAI-CODEX-PERMISSIONS-2026] [source:OAI-CODEX-CONFIG-REFERENCE-2026]
 
+2026-10-26 定向复核：permission profiles 仍为 beta，不能与旧沙箱设置组合使用。若任一加载的配置文件或所选 config profile 设置了 `sandbox_mode`，或启动时传入 `--sandbox`，Codex 会使用旧沙箱设置而不是 `default_permissions`；托管 `allowed_permission_profiles` 是例外，会强制使用 permission profiles，部署前应移除旧沙箱设置。[source:OAI-CODEX-PERMISSIONS-2026]
+
 `codex --help` 在本机 `0.163.0` 中确认 `--sandbox` 提供 `read-only`、`workspace-write`、`danger-full-access`，并列出 `--ask-for-approval`；`codex sandbox --help` 列出 `--permission-profile`。以上只证明 CLI 接受这些参数，不证明某一命令在特定 OS、容器或组织策略下的实际隔离效果。[source:OAI-CODEX-SANDBOXING-2026] [source:OAI-CODEX-APPROVALS-SECURITY-2026]
+
+本轮 `0.164.0` 的上述帮助检查仍确认这些参数；发布说明还记录了 macOS 元数据路径大小写别名及沙箱启动前可执行文件符号链接查找的加固。没有运行实际越权实验，不据此扩大隔离保证。[source:OAI-CODEX-CLI-RELEASES-2026]
 
 ## 网络权限不要混为一谈
 
 Permission profile 的命令网络访问与域名过滤是相关但独立的设置：`permissions.<name>.network.enabled` 控制命令网络是否开放，`features.network_proxy` 及域名规则用于代理过滤。Web 搜索、MCP、浏览器和 Codex 服务流量有单独的控制面；开关命令网络不会自动限制或授权这些其他能力。[source:OAI-CODEX-PERMISSIONS-2026]
+
+仅设置 `network.enabled = true` 或填写域名规则不会启动代理；需启用 `features.network_proxy`，或由管理员通过 `[experimental_network]` requirements 启用代理。网络开启但代理关闭时，profile 域名规则不生效，命令可直接联网；代理启用且没有允许域名时，外部目标会被阻止。[source:OAI-CODEX-PERMISSIONS-2026]
 
 ## 验证和边界
 

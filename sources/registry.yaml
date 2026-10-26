@@ -1,5 +1,5 @@
 schema_version: 1
-updated_at: '2026-10-21'
+updated_at: '2026-10-26'
 sources:
   - id: 'OAI-HARNESS-2026'
     level: 'S'
@@ -186,7 +186,7 @@ sources:
       - 'OpenAI'
     title: 'Config basics'
     published_at: null
-    verified_at: '2026-10-21'
+    verified_at: '2026-10-26'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/config-file/config-basic'
     applies_to:
@@ -278,7 +278,7 @@ sources:
       - 'OpenAI'
     title: 'Permissions'
     published_at: null
-    verified_at: '2026-10-21'
+    verified_at: '2026-10-26'
     review_interval_days: 30
     url: 'https://learn.chatgpt.com/docs/permissions'
     applies_to:
@@ -289,6 +289,8 @@ sources:
       - 'built-in permission profiles include read-only, workspace, and danger-full-access'
       - 'command network access, web search, MCP, browser, apps, and Codex service traffic have separate controls'
       - 'OS-specific sandbox enforcement paths and limitations differ'
+      - 'permission profiles are beta and do not compose with older sandbox settings; managed allowed_permission_profiles is an exception'
+      - 'profile domain rules require an active network proxy; enabling command network access alone does not enforce them'
 
   - id: 'OAI-CODEX-HOOKS-2026'
     level: 'S'
@@ -357,13 +359,15 @@ sources:
       - 'OpenAI'
     title: 'Codex CLI releases'
     published_at: null
-    verified_at: '2026-10-21'
+    verified_at: '2026-10-26'
     review_interval_days: 30
     url: 'https://github.com/openai/codex/releases'
     applies_to:
       - 'versioned Codex CLI release notes and behavior changes'
+      - 'official tag comparisons when release summaries are incomplete'
     stability: 'volatile'
     status: 'active'
     claims:
       - 'the official repository publishes version-specific Codex CLI release notes and full changelog ranges'
       - 'release notes summarize features, bug fixes, and documentation changes'
+      - 'official tag comparisons expose commit and file changes when release summaries are incomplete'

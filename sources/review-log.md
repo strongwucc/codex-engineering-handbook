@@ -99,3 +99,45 @@
 影响来源：`OAI-CODEX-CONFIG-BASICS-2026`、`OAI-CODEX-CONFIG-ADVANCED-2026`、`OAI-CODEX-CONFIG-REFERENCE-2026`、`OAI-CODEX-SANDBOXING-2026`、`OAI-CODEX-APPROVALS-SECURITY-2026`、`OAI-CODEX-PERMISSIONS-2026`、`OAI-CODEX-SKILLS-2026`、`OAI-CODEX-SUBAGENTS-2026`；对应原文已按上表复核。上述发布记录不替代实际权限、网络与并发测试。Hooks 定义信任、`/subagents` 及自定义 Agent 权限说明以本轮当前 Docs 为准，本轮未确定其准确引入版本。
 
 覆盖限制：已确认上述七个版本及其连续 changelog 范围，未成功枚举期间的全部稳定补丁列表，完整性核查标记为 `blocked`。网页工具无法访问 GitHub Releases API；本地只读请求及提权重试均因 `api.github.com` DNS 解析失败而退出，未获得列表。不能据此声称稳定补丁全部查齐，也不能把发布说明未提到某项解释为该行为没有变化。
+
+## 2026-10-26
+
+### 发布触发与定向复核
+
+- 已实际打开官方 [latest 发布入口](https://github.com/openai/codex/releases/latest)、[`0.164.0` 原始发布页](https://github.com/openai/codex/releases/tag/rust-v0.164.0) 和上一条已记录的 [`0.163.0` 发布页](https://github.com/openai/codex/releases/tag/rust-v0.163.0)。latest 指向 `0.164.0`；GitHub 连接器返回的官方元数据确认其为非预发布版本，发布时间为 `2026-10-23T04:48:10Z`。已阅读 `0.164.0` 发布说明及完整 Changelog 条目，比较范围为 `rust-v0.163.0...rust-v0.164.0`。[source:OAI-CODEX-CLI-RELEASES-2026]
+
+| 来源 ID | 本轮原文核验范围 | 对应声明与文件 |
+|---|---|---|
+| [source:OAI-CODEX-CONFIG-BASICS-2026] | [Config basics](https://learn.chatgpt.com/docs/config-file/config-basic#configuration-precedence)：七层默认值优先级、CLI/IDE 共用层级、组织 requirements 独立约束仍有原文支持。 | `docs/configuration/configuration-hierarchy.md` 增加定向复核与跨子命令配置覆盖修复说明。 |
+| [source:OAI-CODEX-PERMISSIONS-2026] | [Permissions](https://learn.chatgpt.com/docs/permissions)：内置 profiles、分离的工具控制面、各 OS 实施差异仍有原文支持；另核对 profile 与旧沙箱设置冲突及网络代理的必要条件。 | `docs/configuration/permissions-and-sandbox.md` 补充 beta 状态、旧设置优先及托管例外、代理未启动时域名规则不生效；registry 增加两项对应声明。 |
+| [source:OAI-CODEX-CLI-RELEASES-2026] | 具体稳定版发布页与官方发布列表。 | 下表记录新增版本与补录；权限教程记录发布说明中的路径加固，不扩展为实际隔离保证。 |
+
+只将以上三项来源的 `verified_at` 更新为 2026-10-26，保留 S 级、30 天周期、`active` 状态及 `published_at: null`。Releases 索引没有单一发布日期；具体版本日期记录在本日志中。没有新增来源 ID。其他来源仍在周期内，日期不变；Hooks 页面仅对信任段落做定向交叉检查，Sandbox 页面仅核对平台描述，均未据此宣称整项来源完成复核。
+
+### 官方发布差异与稳定补丁补录
+
+| 版本与发布日期（UTC） | 官方差异范围 | 影响映射与处理 |
+|---|---|---|
+| [`0.156.1`](https://github.com/openai/codex/releases/tag/rust-v0.156.1)，2026-09-23 | `rust-v0.156.0...rust-v0.156.1` | 模型选择器加入 GPT-6 Sol/Luna，并调整限流切换推荐；现有教程未声明可选模型或该推荐，无受影响声明，不改正文。[source:OAI-CODEX-CLI-RELEASES-2026] |
+| [`0.157.1`](https://github.com/openai/codex/releases/tag/rust-v0.157.1)，2026-09-26 | `rust-v0.157.0...rust-v0.157.1` | 发布页称摘要生成失败；本轮另打开官方标签比较并读取提交与文件 patch，确认 Windows code-mode/MCP 控制台抑制、daemon Job Object 启动与 stdio 继承修复。现有教程不描述这些进程启动细节，不改正文，不将空摘要写成“无变化”。[source:OAI-CODEX-CLI-RELEASES-2026] |
+| [`0.159.1`](https://github.com/openai/codex/releases/tag/rust-v0.159.1)，2026-09-29 | `rust-v0.159.0...rust-v0.159.1` | bundled 与 Bedrock 目录默认模型更新为 GPT-6.1 Sol。现有教程没有声明默认模型名称，无受影响声明，不改正文。[source:OAI-CODEX-CLI-RELEASES-2026] |
+| [`0.159.2`](https://github.com/openai/codex/releases/tag/rust-v0.159.2)，2026-09-29 | `rust-v0.159.1...rust-v0.159.2` | 修复 Windows 后台进程和沙箱命令的控制台窗口闪烁；现有教程没有该界面行为声明，不改正文。[source:OAI-CODEX-CLI-RELEASES-2026] |
+| [`0.159.3`](https://github.com/openai/codex/releases/tag/rust-v0.159.3)，2026-09-30 | `rust-v0.159.2...rust-v0.159.3` | 符合条件的 ChatGPT 登录本地会话可显示可选账户安全设置提醒；现有教程没有该提醒行为声明，不改正文。[source:OAI-CODEX-CLI-RELEASES-2026] |
+| [`0.160.1`](https://github.com/openai/codex/releases/tag/rust-v0.160.1)，2026-10-05 | 发布页未列 Full Changelog 范围；列出回补 PR `#51121`。 | 远端 stdio MCP 在显式远端环境变量下保留 Windows 启动变量。现有教程没有远端 MCP 环境变量配置声明，无受影响声明，不改正文。[source:OAI-CODEX-CLI-RELEASES-2026] |
+| [`0.162.1`](https://github.com/openai/codex/releases/tag/rust-v0.162.1)，2026-10-09 | `rust-v0.162.0...rust-v0.162.1` | 修复多行异步问题的 TUI 崩溃及后台服务功能设置差异导致的启动失败。没有改变本库记录的配置层级或子 Agent 权限声明；不将修复解释为所有恢复路径已验证。[source:OAI-CODEX-CLI-RELEASES-2026] |
+| [`0.164.0`](https://github.com/openai/codex/releases/tag/rust-v0.164.0)，2026-10-23 | `rust-v0.163.0...rust-v0.164.0` | 跨子命令保留 `-c` / `--config` 覆盖，映射配置教程；权限选择等待与 macOS 大小写元数据路径、可替换符号链接加固映射权限教程。新增 `/presets`、内联模型/权限选择、终端图片预览、MCP 认证与远端凭据遮罩等未作为现有教程主题扩写。[source:OAI-CODEX-CLI-RELEASES-2026] |
+
+完整 Changelog 还包括插件 Hook 审核绑定插件内容（`#54619`）、MCP Hook 启动休眠服务器（`#55263`）、模型请求及 Agent 消息相关生命周期 Hook（`#55144`、`#55657`），以及子 Agent 环境继承（`#55327`、`#55331`、`#55375`）和 Skills 目录/别名更新。现有 `docs/configuration/hooks.md` 已要求审核当前定义且不把配置解析当作执行成功；[当前 Hooks 信任段落](https://learn.chatgpt.com/docs/hooks#review-and-trust-hooks)仍支持该边界。现有 `multi-agent.md` 未保证环境完全复制或独立 worktree，`skills.md` 未保证安装即运行；本轮保留这些表述，不凭变更标题新增事件输入输出、继承或发现语义。[source:OAI-CODEX-CLI-RELEASES-2026] [source:OAI-CODEX-HOOKS-2026]
+
+### 关闭上一轮列表完整性阻塞
+
+- 网页工具仍无法读取 GitHub Releases API；本机 curl 及沙箱外重试均因 DNS 解析失败退出。本轮改用 GitHub 连接器读取官方 [发布列表](https://github.com/openai/codex/releases)及 `?page=2`、`?page=3`、`?page=4`，共 120 条记录，最后一条为 `rust-v0.156.0`；按 `prerelease: false`、`draft: false` 筛选出覆盖该基线至最新稳定版的 16 个版本。[source:OAI-CODEX-CLI-RELEASES-2026]
+- 对照既有基线和七条主版本记录，补录 `0.156.1`、`0.157.1`、`0.159.1`、`0.159.2`、`0.159.3`、`0.160.1`、`0.162.1`，并新增 `0.164.0`。七个补丁的具体原始发布页均已打开；2026-10-21 的列表完整性 `blocked` 在本轮关闭，保留原日志作为历史事实。[source:OAI-CODEX-CLI-RELEASES-2026]
+- `0.157.1` 发布页本身的空摘要没有被当作证据。网页比较请求失败后，GitHub 连接器成功返回[官方比较](https://github.com/openai/codex/compare/rust-v0.157.0...rust-v0.157.1)：`diverged`、ahead 5、behind 1，十个变更文件；已读五条提交与全部文件 patch，不把该分支差异写成线性版本继承。当前没有未解决的来源冲突或发布覆盖阻塞。[source:OAI-CODEX-CLI-RELEASES-2026]
+
+### 本地验证与边界
+
+- `codex --version`、`codex --help`、`codex sandbox --help` 均退出 0，本机为 `codex-cli 0.164.0`；帮助仍列出配置覆盖、profile、sandbox、审批与 `--permission-profile` 参数。CLI 提示当前环境不能创建 PATH aliases；本轮未修改全局环境。
+- 未启动独立 CLI 模型会话；配置实际叠加、权限 profiles 选择、文件与网络隔离、Hook 执行、Skills 发现和子 Agent 环境继承均为 `not_run`。这些发布修复和文档声明不代表本机运行时验收。
+- 仅修改文档与来源登记，未修改评测输入或现有未跟踪的 `evals/results/`，未执行 Git 写操作。
+- `scripts/test-verify-knowledge-base.sh` 与 `scripts/verify-knowledge-base.sh` 均通过，`git diff --check` 通过；最终 diff 已人工审阅。仓库没有面向本轮文档变更的独立 lint 或类型检查命令，标记为 `not_run`，以项目确定性检查验证结构与引用。

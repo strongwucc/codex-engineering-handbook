@@ -38,6 +38,8 @@ $CODEX_HOME/<profile>.config.toml         # 由 --profile <profile> 选择
 
 ## 命令行覆盖
 
+2026-10-26 定向复核：官方配置优先级仍为上述七层；本机 `codex-cli 0.164.0` 的 `codex --help` 仍列出 `--profile`、`--config` 和 `--cd`。`0.164.0` 发布说明记录了跨子命令保留 `-c` / `--config` 覆盖的修复；本轮未运行配置叠加实验，不把发布说明当作本机有效配置验证。[source:OAI-CODEX-CONFIG-BASICS-2026] [source:OAI-CODEX-CLI-RELEASES-2026]
+
 本机 `codex --help` 确认当前 CLI 提供 `--profile`、`--config` 和 `--cd` 参数。`--config` 可用点号表示嵌套键，值按 TOML 解析；若不能解析为 TOML，则按字符串处理。以下仅为格式示例，不在本机执行：
 
 ```sh
