@@ -1,0 +1,92 @@
+[
+  {
+    "skill": "brainstorming",
+    "old_bytes": 17548,
+    "new_bytes": 10073,
+    "changed": true
+  },
+  {
+    "skill": "diagnosing-superpowers",
+    "old_bytes": 6904,
+    "new_bytes": 6904,
+    "changed": false
+  },
+  {
+    "skill": "dispatching-parallel-agents",
+    "old_bytes": 6078,
+    "new_bytes": 6078,
+    "changed": false
+  },
+  {
+    "skill": "executing-plans",
+    "old_bytes": 20405,
+    "new_bytes": 20405,
+    "changed": false
+  },
+  {
+    "skill": "finishing-a-development-branch",
+    "old_bytes": 7781,
+    "new_bytes": 7781,
+    "changed": false
+  },
+  {
+    "skill": "receiving-code-review",
+    "old_bytes": 6203,
+    "new_bytes": 6203,
+    "changed": false
+  },
+  {
+    "skill": "requesting-code-review",
+    "old_bytes": 2977,
+    "new_bytes": 2974,
+    "changed": true
+  },
+  {
+    "skill": "subagent-driven-development",
+    "old_bytes": 32577,
+    "new_bytes": 32577,
+    "changed": false
+  },
+  {
+    "skill": "systematic-debugging",
+    "old_bytes": 9465,
+    "new_bytes": 9530,
+    "changed": true
+  },
+  {
+    "skill": "test-driven-development",
+    "old_bytes": 9578,
+    "new_bytes": 9578,
+    "changed": false
+  },
+  {
+    "skill": "using-git-worktrees",
+    "old_bytes": 6813,
+    "new_bytes": 6813,
+    "changed": false
+  },
+  {
+    "skill": "using-superpowers",
+    "old_bytes": 3192,
+    "new_bytes": 3192,
+    "changed": false
+  },
+  {
+    "skill": "verification-before-completion",
+    "old_bytes": 3646,
+    "new_bytes": 3646,
+    "changed": false
+  },
+  {
+    "skill": "writing-plans",
+    "old_bytes": 10335,
+    "new_bytes": 10335,
+    "changed": false
+  },
+  {
+    "skill": "writing-skills",
+    "old_bytes": 26623,
+    "new_bytes": 26623,
+    "changed": false
+  }
+]

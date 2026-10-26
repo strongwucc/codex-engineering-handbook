@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-22",
+  "status": "blocked",
+  "model": "gpt-6.1-sol",
+  "reasoning_effort": "medium",
+  "cli": "0.163.0",
+  "variants": [
+    "baseline",
+    "v6.4.2",
+    "v7.0.0"
+  ],
+  "repeats_per_task": 1,
+  "scope": "preliminary smoke comparison; no statistical ranking",
+  "isolation_requirements": [
+    "same model, task text, environment and permissions",
+    "each case starts from the same clean code fixture",
+    "must verify the effective skills catalog contains only the selected variant before running",
+    "global, plugin and other variant skills must not leak into a case",
+    "evaluator tests, scorecards and other tasks must not be mounted in agent workspace",
+    "retain raw JSONL, exit status, final file changes and observable usage",
+    "independent evaluator runs both existing tests and hidden acceptance tests"
+  ],
+  "isolation_verified": false,
+  "runs": [
+    {
+      "variant": "baseline",
+      "task_id": "T01",
+      "workspace": "/private/tmp/superpowers-audit-20261022/cases/baseline/T01",
+      "status": "blocked",
+      "reason": "Codex preflight failed before a usable model response: workspace routing discovery failed",
+      "metrics": {
+        "success": null,
+        "elapsed_ms": null,
+        "input_tokens": null,
+        "output_tokens": null
+      }
+    },
+    {
+      "variant": "baseline",
+      "task_id": "T02",
+      "workspace": "/private/tmp/superpowers-audit-20261022/cases/baseline/T02",
+      "status": "blocked",
+      "reason": "Codex preflight failed before a usable model response: workspace routing discovery failed",
+      "metrics": {
+        "success": null,
+        "elapsed_ms": null,
+        "input_tokens": null,
+        "output_tokens": null
+      }
+    },
+    {
+      "variant": "v6.4.2",
+      "task_id": "T01",
+      "workspace": "/private/tmp/superpowers-audit-20261022/cases/v6.4.2/T01",
+      "status": "blocked",
+      "reason": "Codex preflight failed before a usable model response: workspace routing discovery failed",
+      "metrics": {
+        "success": null,
+        "elapsed_ms": null,
+        "input_tokens": null,
+        "output_tokens": null
+      }
+    },
+    {
+      "variant": "v6.4.2",
+      "task_id": "T02",
+      "workspace": "/private/tmp/superpowers-audit-20261022/cases/v6.4.2/T02",
+      "status": "blocked",
+      "reason": "Codex preflight failed before a usable model response: workspace routing discovery failed",
+      "metrics": {
+        "success": null,
+        "elapsed_ms": null,
+        "input_tokens": null,
+        "output_tokens": null
+      }
+    },
+    {
+      "variant": "v7.0.0",
+      "task_id": "T01",
+      "workspace": "/private/tmp/superpowers-audit-20261022/cases/v7.0.0/T01",
+      "status": "blocked",
+      "reason": "Codex preflight failed before a usable model response: workspace routing discovery failed",
+      "metrics": {
+        "success": null,
+        "elapsed_ms": null,
+        "input_tokens": null,
+        "output_tokens": null
+      }
+    },
+    {
+      "variant": "v7.0.0",
+      "task_id": "T02",
+      "workspace": "/private/tmp/superpowers-audit-20261022/cases/v7.0.0/T02",
+      "status": "blocked",
+      "reason": "Codex preflight failed before a usable model response: workspace routing discovery failed",
+      "metrics": {
+        "success": null,
+        "elapsed_ms": null,
+        "input_tokens": null,
+        "output_tokens": null
+      }
+    }
+  ],
+  "latest_v7_0_1_download": "blocked: DNS lookup failed even after escalation",
+  "do_not_infer": [
+    "no model task was completed",
+    "no timing/token comparison is available",
+    "file size or instruction changes do not prove better task performance"
+  ]
+}

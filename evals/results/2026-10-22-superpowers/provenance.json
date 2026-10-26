@@ -1,0 +1,17 @@
+{
+  "legacy_install": {
+    "source": "obra/superpowers",
+    "sourceType": "github",
+    "sourceUrl": "https://github.com/obra/superpowers.git",
+    "skillPath": "skills/using-superpowers/SKILL.md",
+    "skillFolderHash": "7569e98e26e69d0cc0b16da7ea4c30f48e94ca02",
+    "installedAt": "2026-03-20T06:22:13.352Z",
+    "updatedAt": "2026-03-20T06:22:13.352Z"
+  },
+  "claude_symlink": "/Users/chuanchuan/.claude/skills/using-superpowers",
+  "symlink_target": "../../.agents/skills/using-superpowers",
+  "resolved_target": "/Users/chuanchuan/.agents/skills/using-superpowers",
+  "legacy_sha256": "5fa548a85ce639dc6a2ea53607f9d405363c9b935004d0d95dc16e9629752d00",
+  "codex_version": "6.4.2",
+  "claude_version": "7.0.0"
+}
