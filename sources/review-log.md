@@ -1,5 +1,11 @@
 # 来源核验日志
 
+## 2026-10-30 | Karpathy 上下文工程实践语境
+
+- 已实际打开 [2025 LLM Year in Review](https://karpathy.bearblog.dev/year-in-review-2025/)、[Sequoia Ascent 2026 summary](https://karpathy.bearblog.dev/sequoia-ascent-2026/) 和 [Animals vs Ghosts](https://karpathy.bearblog.dev/animals-vs-ghosts/)，分别登记为 `B-KARPATHY-REVIEW-2025`、`B-KARPATHY-SEQUOIA-2026`、`B-KARPATHY-ANIMALS-2025`。Karpathy 是 AI 研究者并直接讨论、使用编程 Agent；其本人发布内容作为 B 级实践语境，不证明 Codex 产品语义或普遍效果。
+- Sequoia 页面明确其摘要和整理文字由 AI 生成，作者称已阅读；引用限于该页面可支持的观点。X 上关于上下文工程的帖子本轮访问受阻，未登记或作为原文证据。
+- 仅复核上述三项来源；不刷新其他来源日期。专题中的任务流程和 H11 是本仓库治理建议，实际运行和对照结果另行记录。
+
 ## 2026-09-12
 
 ### 已接纳

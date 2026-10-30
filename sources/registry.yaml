@@ -1,6 +1,58 @@
 schema_version: 1
-updated_at: '2026-10-26'
+updated_at: '2026-10-30'
 sources:
+  - id: 'B-KARPATHY-REVIEW-2025'
+    level: 'B'
+    publisher: 'Andrej Karpathy'
+    authors:
+      - 'Andrej Karpathy'
+    title: '2025 LLM Year in Review'
+    published_at: '2025-12-19'
+    verified_at: '2026-10-30'
+    review_interval_days: 90
+    url: 'https://karpathy.bearblog.dev/year-in-review-2025/'
+    applies_to:
+      - 'author perspective on LLM applications and agent workflows'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'the author identifies context engineering as a function of LLM applications and describes agents as loops of reasoning and tool use'
+
+  - id: 'B-KARPATHY-SEQUOIA-2026'
+    level: 'B'
+    publisher: 'Andrej Karpathy'
+    authors:
+      - 'Andrej Karpathy'
+    title: 'Sequoia Ascent 2026 summary'
+    published_at: '2026-04-30'
+    verified_at: '2026-10-30'
+    review_interval_days: 90
+    url: 'https://karpathy.bearblog.dev/sequoia-ascent-2026/'
+    applies_to:
+      - 'author perspective on software 3.0 and agentic engineering'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'the author frames context as a lever for the model and describes environment observation and feedback in agentic work'
+      - 'the author publishes an AI-generated summary and edited transcript that he says he read'
+
+  - id: 'B-KARPATHY-ANIMALS-2025'
+    level: 'B'
+    publisher: 'Andrej Karpathy'
+    authors:
+      - 'Andrej Karpathy'
+    title: 'Animals vs Ghosts'
+    published_at: '2025-10-01'
+    verified_at: '2026-10-30'
+    review_interval_days: 90
+    url: 'https://karpathy.bearblog.dev/animals-vs-ghosts/'
+    applies_to:
+      - 'author perspective on context learning and text-based memory'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'the author describes in-context learning as test-time adaptation and discusses memory using text rather than weights'
+
   - id: 'OAI-HARNESS-2026'
     level: 'S'
     publisher: 'OpenAI'

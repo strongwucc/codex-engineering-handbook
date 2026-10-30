@@ -50,7 +50,8 @@
 | 收集器回归测试 | 同一 Skill 的 `scripts/test_collect_evidence.py` | 检查证据收集器的行为 |
 | 知识库检查器 | [verify-knowledge-base.sh](scripts/verify-knowledge-base.sh) | 检查来源字段、日期、引用 ID 和内部链接等 |
 | 检查器回归测试 | [test-verify-knowledge-base.sh](scripts/test-verify-knowledge-base.sh) | 验证检查器的成功、失败及日期边界行为 |
-| H01–H10 评估任务 | [evals/fixtures/](evals/fixtures/) | 测试精准修改、只读审查、验证诚信、敏感信息与危险操作边界、指令冲突、Skill 触发、多 Agent 隔离、模型升级和配置兼容性 |
+| H01–H11 评估任务 | [evals/fixtures/](evals/fixtures/) | 测试精准修改、只读审查、验证诚信、敏感信息与危险操作边界、指令冲突、Skill 触发、多 Agent 隔离、模型升级、配置兼容性和上下文发现 |
+| 上下文发现试验 | [初次试运行](evals/results/2026-10-30-context-discovery.md)、[配对试运行](evals/results/2026-10-30-context-paired.md) | 合成项目观察、范围隔离问题与验证限制 |
 | 模型升级练习集 | [evals/model-upgrade/](evals/model-upgrade/README.md) | 提供独立 Node.js 基线、四项任务、评估者测试与评分表，用于模型/profile 配对比较 |
 | 评估报告模板 | [evaluation-report.md](templates/evaluation-report.md) | 统一记录九维证据、任务结果、生产门槛与验证限制 |
 
@@ -60,7 +61,7 @@
 python3 ~/.codex/skills/codex-harness-evaluate/scripts/collect_evidence.py /path/to/project --framework-dir "$PWD" --skip-global
 ```
 
-执行 H01–H10 时，一次只向被测 Agent 提供一个任务；[holdout 评分依据](evals/holdout.md)仅供评估者使用。模型升级按其 README 的隔离协议执行，验收测试和评分表不得进入被测工作区或上下文。
+执行 H01–H11 时，一次只向被测 Agent 提供一个任务；[holdout 评分依据](evals/holdout.md)仅供评估者使用。模型升级按其 README 的隔离协议执行，验收测试和评分表不得进入被测工作区或上下文。
 
 ## 当前状态与验证范围
 
@@ -95,6 +96,7 @@ git diff --check
 ### 核心规范
 
 - [稳定工程原则](docs/principles.md)
+- [面向任务的上下文](docs/context-engineering.md)
 - [九维度评估标准与生产门槛](docs/evaluation-standard.md)
 - [维护与来源准入](docs/maintenance.md)
 - [来源登记](sources/registry.yaml)
