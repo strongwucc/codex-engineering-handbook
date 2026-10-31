@@ -1,6 +1,44 @@
 schema_version: 1
-updated_at: '2026-10-30'
+updated_at: '2026-10-31'
 sources:
+  - id: 'B-DEEPSEEK-SUPERAGENT-2026'
+    level: 'B'
+    publisher: 'DeepSeek Harness Team'
+    authors:
+      - 'Yujia Qiao'
+      - 'DeepSeek Harness Team'
+    title: 'Super-agent 设计探索：迈向更自主的 Agent 系统'
+    published_at: '2026-10-31'
+    verified_at: '2026-10-31'
+    review_interval_days: 90
+    url: 'https://mp.weixin.qq.com/s/zoS7GlReWPhfCjENGxXCdg'
+    applies_to:
+      - 'author architecture discussion of event-driven multi-session agents'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'the authors propose bounded inline context with references for on-demand retrieval and discuss long-term memory as an open problem'
+      - 'the authors describe preliminary scheduling experiments using synthetic messages and simulated work, not coding-task quality'
+
+  - id: 'B-DEEPSEEK-SUPERAGENT-CODE-2026'
+    level: 'B'
+    publisher: 'DeepSeek Harness Team'
+    authors:
+      - 'DeepSeek Harness Team'
+    title: 'dsh-superagent-prototype at 6337fc823ce20251c8de8085948165c81aaa701e'
+    published_at: null
+    verified_at: '2026-10-31'
+    review_interval_days: 90
+    url: 'https://github.com/deepseek-ai/dsh-superagent-prototype/tree/6337fc823ce20251c8de8085948165c81aaa701e'
+    applies_to:
+      - 'fixed revision of a research prototype for agent task authorization and recovery'
+    stability: 'volatile'
+    status: 'active'
+    claims:
+      - 'the prototype documentation distinguishes subscribed messages as context from the authority of a task mandate'
+      - 'the prototype documents checking the worktree, git history and GitHub after restart before repeating outside actions'
+      - 'the prototype uses bounded trigger previews and references to read longer content'
+
   - id: 'B-KARPATHY-REVIEW-2025'
     level: 'B'
     publisher: 'Andrej Karpathy'

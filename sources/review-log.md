@@ -147,3 +147,9 @@
 - 未启动独立 CLI 模型会话；配置实际叠加、权限 profiles 选择、文件与网络隔离、Hook 执行、Skills 发现和子 Agent 环境继承均为 `not_run`。这些发布修复和文档声明不代表本机运行时验收。
 - 仅修改文档与来源登记，未修改评测输入或现有未跟踪的 `evals/results/`，未执行 Git 写操作。
 - `scripts/test-verify-knowledge-base.sh` 与 `scripts/verify-knowledge-base.sh` 均通过，`git diff --check` 通过；最终 diff 已人工审阅。仓库没有面向本轮文档变更的独立 lint 或类型检查命令，标记为 `not_run`，以项目确定性检查验证结构与引用。
+
+## 2026-10-31（UTC）：DeepSeek Super-agent 一手实践
+
+- 实际打开 DeepSeek Harness 团队的原始文章与公开原型固定提交 `6337fc823ce20251c8de8085948165c81aaa701e`，定向复核授权文档、执行恢复文档和 `src/executor/dsh.ts` 的输入预览。文章写作与系统实现由 Yujia Qiao 完成，并源于团队实践；原型是作者团队发布的研究代码，与文章及内部版本并不完全相同。[source:B-DEEPSEEK-SUPERAGENT-2026] [source:B-DEEPSEEK-SUPERAGENT-CODE-2026]
+- 两项来源登记为 B 级、90 天周期；分别用于作者架构观点和该固定版本的实现案例，不支持 Codex 产品事实或普遍收益。文章实验使用合成消息与模拟工作，每种方案 5 次，未测实际编码质量。
+- `docs/evaluation-standard.md` 补充外部上下文与授权区分、恢复前核对副作用的候选检查；`docs/context-engineering.md` 增加摘要与引用的实践案例及 H11 对照实验建议。现有 H11 任务和评分依据未改变；未运行该对照实验、原型或真实平台联调。
